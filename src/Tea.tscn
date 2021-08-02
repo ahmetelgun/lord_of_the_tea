@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://images/tea.png" type="Texture" id=1]
+[ext_resource path="res://src/Tea.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56, 72 )
+
+[node name="Tea" type="KinematicBody2D"]
+scale = Vector2( 0.3, 0.3 )
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="tea" type="Sprite" parent="."]
+position = Vector2( -0.666668, -5.72205e-06 )
+scale = Vector2( 0.5, 0.386473 )
+texture = ExtResource( 1 )

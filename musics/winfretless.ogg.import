@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/winfretless.ogg-23dcf593105283944487c72df451810a.oggstr"
+
+[deps]
+
+source_file="res://musics/winfretless.ogg"
+dest_files=[ "res://.import/winfretless.ogg-23dcf593105283944487c72df451810a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

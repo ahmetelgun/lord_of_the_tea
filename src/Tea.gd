@@ -1,0 +1,18 @@
+extends KinematicBody2D
+
+
+var velocity
+var mouse_position
+var explosion = preload("res://src/Explosion.tscn")
+
+func _physics_process(delta: float) -> void:
+	rotation += 10*delta
+	var info = move_and_collide(velocity*delta)
+	if info:
+		var explosion_instance = explosion.instance()
+		explosion_instance.position = position
+		get_parent().add_child(explosion_instance)
+		get_parent().update_score()
+		info.collider.queue_free()
+		queue_free()
+	

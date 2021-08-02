@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/Bus.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/Grass.png" type="Texture" id=2]
+[ext_resource path="res://ARCADEPI.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://src/Level1.gd" type="Script" id=4]
+[ext_resource path="res://button_theme.tres" type="Theme" id=5]
+[ext_resource path="res://musics/newbattle.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "quotes"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 5, 5.5, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label3:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 0.944444, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label4:percent_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 9, 9.5, 10, 10.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]
+}
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://ARCADEPI.TTF"
+
+[sub_resource type="DynamicFont" id=3]
+size = 19
+font_data = SubResource( 2 )
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Grass" type="Sprite" parent="."]
+position = Vector2( 1004, 581.125 )
+scale = Vector2( 0.980469, 0.57312 )
+texture = ExtResource( 2 )
+
+[node name="Bus" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1016, 1080 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 96.0
+margin_top = 104.0
+margin_right = 264.0
+margin_bottom = 192.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "quotes"
+anims/quotes = SubResource( 4 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1048.0
+margin_top = 952.0
+margin_right = 1168.0
+margin_bottom = 972.0
+custom_fonts/font = SubResource( 3 )
+text = "Keyif cayi"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 776.0
+margin_top = 944.0
+margin_right = 1032.0
+margin_bottom = 964.0
+custom_fonts/font = SubResource( 3 )
+text = "Bu bana abarti geldi"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 1008.0
+margin_top = 904.0
+margin_right = 1253.0
+margin_bottom = 924.0
+custom_fonts/font = SubResource( 3 )
+text = "Al cay ic"
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

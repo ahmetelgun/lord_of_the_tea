@@ -1,0 +1,48 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://images/zombie1/skeleton-move_06.png" type="Texture" id=1]
+[ext_resource path="res://images/zombie1/skeleton-move_04.png" type="Texture" id=2]
+[ext_resource path="res://images/zombie1/skeleton-move_05.png" type="Texture" id=3]
+[ext_resource path="res://images/zombie1/skeleton-move_03.png" type="Texture" id=4]
+[ext_resource path="res://images/zombie1/skeleton-move_02.png" type="Texture" id=5]
+[ext_resource path="res://images/zombie1/skeleton-move_15.png" type="Texture" id=6]
+[ext_resource path="res://images/zombie1/skeleton-move_16.png" type="Texture" id=7]
+[ext_resource path="res://images/zombie1/skeleton-move_07.png" type="Texture" id=8]
+[ext_resource path="res://images/zombie1/skeleton-move_09.png" type="Texture" id=9]
+[ext_resource path="res://images/zombie1/skeleton-move_08.png" type="Texture" id=10]
+[ext_resource path="res://images/zombie1/skeleton-move_10.png" type="Texture" id=11]
+[ext_resource path="res://images/zombie1/skeleton-move_11.png" type="Texture" id=12]
+[ext_resource path="res://images/zombie1/skeleton-move_13.png" type="Texture" id=13]
+[ext_resource path="res://images/zombie1/skeleton-move_12.png" type="Texture" id=14]
+[ext_resource path="res://images/zombie1/skeleton-move_14.png" type="Texture" id=15]
+[ext_resource path="res://images/zombie1/skeleton-move_01.png" type="Texture" id=16]
+[ext_resource path="res://images/zombie1/skeleton-move_00.png" type="Texture" id=17]
+[ext_resource path="res://src/Zombie.gd" type="Script" id=18]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[node name="Zombie1" type="KinematicBody2D"]
+position = Vector2( 0, 16 )
+collision_layer = 4
+collision_mask = 7
+script = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -16 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -16 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+frame = 10
+playing = true
