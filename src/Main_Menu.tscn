@@ -186,17 +186,26 @@ __meta__ = {
 
 [node name="CheckBox" type="CheckButton" parent="."]
 margin_left = 1656.0
-margin_top = 40.0
-margin_right = 1866.0
-margin_bottom = 108.0
+margin_top = 32.0
+margin_right = 1894.0
+margin_bottom = 100.0
 theme = ExtResource( 4 )
 text = "Mahmood Tea"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="High_Scores" type="Button" parent="."]
+margin_left = 64.0
+margin_top = 40.0
+margin_right = 228.0
+margin_bottom = 106.0
+theme = ExtResource( 4 )
+text = "High Scores"
+
 [connection signal="pressed" from="VBoxContainer/Easy_Button" to="." method="_on_Easy_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Medium_Button" to="." method="_on_Medium_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Hard_Button" to="." method="_on_Hard_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Infinity" to="." method="_on_Infinity_pressed"]
 [connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="pressed" from="High_Scores" to="." method="_on_High_Scores_pressed"]

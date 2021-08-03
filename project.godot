@@ -8,15 +8,22 @@
 
 config_version=4
 
+[*res:]
+
+/src/secrets.gd=false
+
 [application]
 
 config/name="Lord of the Tea"
+config/description=false
 run/main_scene="res://src/Main_Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
+Secrets="*res://src/secrets.gd"
 Globals="*res://src/globals.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
@@ -26,6 +33,10 @@ window/size/resizable=false
 window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/silent_wolf/plugin.cfg" )
 
 [input]
 

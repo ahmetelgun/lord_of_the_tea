@@ -26,3 +26,7 @@ func _on_CheckBox_toggled(button_pressed):
 		Globals.is_kacak = true
 	else:
 		Globals.is_kacak = false
+
+
+func _on_High_Scores_pressed():
+	get_tree().change_scene("res://src/High_Scores.tscn")
