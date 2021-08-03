@@ -202,6 +202,9 @@ margin_right = 228.0
 margin_bottom = 106.0
 theme = ExtResource( 4 )
 text = "High Scores"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="VBoxContainer/Easy_Button" to="." method="_on_Easy_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Medium_Button" to="." method="_on_Medium_Button_pressed"]
