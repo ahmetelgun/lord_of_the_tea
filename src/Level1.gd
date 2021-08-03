@@ -5,7 +5,6 @@ export var spawn_frequent = 1.0
 var next_zombie_time = 1.0
 var rng = RandomNumberGenerator.new()
 var zombie = preload("res://src/Zombie1.tscn")
-var score = Globals.score
 
 func _ready():
 	update_score()
@@ -14,8 +13,9 @@ func _physics_process(delta: float) -> void:
 	if next_zombie_time <= 0:
 		spawn_zombie()
 		spawn_zombie()
-		spawn_frequent -= 0.01
-		zombie_speed += 5
+		if not Globals.is_infinity:
+			spawn_frequent -= 0.01
+			zombie_speed += 5
 		next_zombie_time = spawn_frequent
 	else:
 		next_zombie_time -= delta
@@ -31,7 +31,11 @@ func spawn_zombie():
 	add_child(zombie_instance)
 
 func update_score():
-	score -= 1
-	if score == 0:
-		get_tree().change_scene("res://src/Win.tscn")
-	get_node("Label").text = "Kalan: %d" % score
+	if not Globals.is_infinity:
+		Globals.score -= 1
+		if Globals.score == 0:
+			get_tree().change_scene("res://src/Win.tscn")
+		get_node("Label").text = "Kalan: %d" % Globals.score
+	else:
+		Globals.score += 1
+		get_node("Label").text = "Score: %d" % Globals.score
