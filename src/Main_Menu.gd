@@ -19,3 +19,10 @@ func _on_Infinity_pressed():
 	Globals.score = -1
 	Globals.is_infinity = true
 	get_tree().change_scene("res://src/Level1.tscn")
+
+
+func _on_CheckBox_toggled(button_pressed):
+	if button_pressed:
+		Globals.is_kacak = true
+	else:
+		Globals.is_kacak = false
